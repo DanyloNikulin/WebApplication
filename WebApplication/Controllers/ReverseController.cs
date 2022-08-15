@@ -15,8 +15,8 @@ namespace WebApplication.Controllers {
 		public ReverseController(IReverseService reverseService) {
 			_reverseService = reverseService;
 		}
-			[HttpGet()]
-		public async Task<ActionResult<ReverseGetResponce>> Get(string data) {
+		[HttpGet()]
+		public ActionResult<ReverseGetResponce> Get(string data) {
 			string result = String.Empty;
 			if (!string.IsNullOrEmpty(data)) {
 				result = _reverseService.Do(data);
