@@ -17,11 +17,7 @@ namespace WebApplication.Controllers {
 		}
 		[HttpGet()]
 		public ActionResult<ReverseGetResponce> Get(string data) {
-			string result = String.Empty;
-			if (!string.IsNullOrEmpty(data)) {
-				result = _reverseService.Do(data);
-			}
-			return new ReverseGetResponce() { Data = result };
+			return _reverseService.Do(data);
 		}
 	}
 }
